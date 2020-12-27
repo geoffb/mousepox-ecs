@@ -12,11 +12,8 @@ export class Entity implements IEntity {
   }
 
   /** Add a component to this entity */
-  public addComponent<T extends IComponent>(construct: ComponentConstructor<T>, state?: object): T {
+  public addComponent<T extends IComponent>(construct: ComponentConstructor<T>): T {
     const component = new construct(this);
-    if (state !== undefined) {
-      component.deserialize(state);
-    }
     this.components.push(component);
     return component;
   }

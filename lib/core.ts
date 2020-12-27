@@ -14,6 +14,4 @@ export interface IEntity {
 /** A component */
 export interface IComponent {
   entity: IEntity;
-  serialize(): object;
-  deserialize(data: object): void;
 }

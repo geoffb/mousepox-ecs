@@ -10,10 +10,4 @@ export abstract class Component implements IComponent {
     this.entity = entity;
   }
 
-  /** Serialize this component's state */
-  public abstract serialize(): object;
-
-  /** Deserialize this componet from a given state */
-  public abstract deserialize(data: object): void;
-
 }
