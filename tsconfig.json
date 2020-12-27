@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["es2016", "dom"],
+    "module": "commonjs",
+    "strict": true,
+    "removeComments": true,
+    "outDir": "dist",
+    "declaration": true
+  },
+  "compileOnSave": true,
+  "include": [
+    "lib/**/*.ts"
+  ]
+}
