@@ -1,3 +1,3 @@
-# ECS
+# @mousepox/ecs
 
-A basic Entity/Component System, written in TypeScript.
+An [entity component system](https://en.wikipedia.org/wiki/Entity_component_system) in [TypeScript](https://www.typescriptlang.org).
