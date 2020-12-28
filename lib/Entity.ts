@@ -1,13 +1,21 @@
+import { generateUUID } from "@mousepox/util";
 import { IEntity, IComponent, ComponentConstructor } from "./core";
 
 /** An entity with managed components */
 export class Entity implements IEntity {
 
+  /** This entity's unique ID */
+  public id: string;
+
   /** List of components attached to this entity */
   public readonly components: IComponent[] = [];
 
+  constructor(id?: string) {
+    this.id = id ?? generateUUID();
+  }
+
   /** Dispose of this entity */
-  public dispose() {
+  public dispose(): void {
     this.components.length = 0;
   }
 

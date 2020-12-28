@@ -5,7 +5,7 @@
   "author": "Geoff Blair <geoff@mousepox.io>",
   "license": "ISC",
   "main": "dist/cjs/index.js",
-  "types": "dist/cjs/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "module": "dist/es/index.js",
   "files": [
     "dist"
@@ -13,11 +13,18 @@
   "scripts": {
     "build": "tsc && tsc -p tsconfig-es.json",
     "clean": "rm -rf dist",
-    "prepublish": "yarn build",
+    "lint": "eslint lib --ext .ts",
+    "prepublish": "yarn lint && yarn clean && yarn build && yarn test",
     "test": "tape -r ts-node/register 'tests/**/*-test.ts'"
+  },
+  "dependencies": {
+    "@mousepox/util": "^0.2.0"
   },
   "devDependencies": {
     "@types/tape": "^4.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "eslint": "^7.9.0",
     "tape": "^5.0.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"

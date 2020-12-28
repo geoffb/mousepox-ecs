@@ -3,9 +3,10 @@ export type ComponentConstructor<T extends IComponent> = new (entity: IEntity) =
 
 /** An entity */
 export interface IEntity {
+  id: string;
   readonly components: IComponent[];
   dispose(): void;
-  addComponent<T extends IComponent>(construct: ComponentConstructor<T>, state?: object): void;
+  addComponent<T extends IComponent>(construct: ComponentConstructor<T>): void;
   hasComponent<T extends IComponent>(construct: ComponentConstructor<T>): boolean;
   getComponent<T extends IComponent>(construct: ComponentConstructor<T>): T;
   removeComponent<T extends IComponent>(construct: ComponentConstructor<T>): void;
